@@ -1,0 +1,22 @@
+.loadingWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #00000020;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .loading {
+    font-size: 4.8rem;
+    animation: spin 1s infinite;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotateZ(360deg);
+  }
+}

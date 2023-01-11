@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { IRecipe } from "../../components/RecipeItem";
 import { db } from "../../services/firebase";
 import { collection, doc, getDoc } from "firebase/firestore";
+import { Loading } from "../../components/Loading";
 
 export function Recipe() {
   const [recipeData, setRecipeData] = useState<IRecipe | null>(null);
@@ -40,7 +41,7 @@ export function Recipe() {
   return (
     <div>
       {!recipeData ? (
-        <div>Loading</div>
+        <Loading />
       ) : (
         <>
           <div>

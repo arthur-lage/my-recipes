@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import GoogleLogo from "../../assets/google_logo.svg";
 import Welcome from "../../assets/welcoming.svg";
 
-import styles from "./style.module.scss";
+import styles from "./styles.module.scss";
 import { useAuth } from "../../hooks/useAuth";
 
 export function Register() {
