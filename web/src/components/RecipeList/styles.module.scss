@@ -1,5 +1,13 @@
 .recipe-list {
-  display: flex;
-  gap: 6rem;
-  flex-wrap: wrap;
+  gap: 3rem;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media screen and (min-width: 850px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (min-width: 1230px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

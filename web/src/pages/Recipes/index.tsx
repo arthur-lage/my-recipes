@@ -17,8 +17,8 @@ export function Recipes() {
       const colRef = collection(db, "recipes");
       const snapshots = await getDocs(colRef);
 
-      snapshots.docs.forEach((currDoc) => {
-        const newRecipe: IRecipe = {
+      const mappedRecipes = snapshots.docs.map((currDoc) => {
+        return {
           createdAt: currDoc.data().createdAt.seconds,
           howToPrepare: currDoc.data().howToPrepare,
           ingredients: currDoc.data().ingredients,
@@ -27,9 +27,9 @@ export function Recipes() {
           photoURL: currDoc.data().photoURL,
           id: currDoc.id,
         };
-
-        setRecipeList([...recipeList, newRecipe]);
       });
+
+      setRecipeList(mappedRecipes);
 
       setIsFetchingRecipes(false);
     }
